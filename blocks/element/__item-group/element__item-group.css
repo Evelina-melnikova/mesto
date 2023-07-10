@@ -7,6 +7,7 @@
     background-color: #FFF;
     transition: 0.5s;
     cursor: pointer;
+    background-repeat: no-repeat;
 }
 
 .element__item-group:hover {

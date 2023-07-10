@@ -3,6 +3,7 @@ console.log("скрипт подключен");
 const popup = document.querySelector('.popup');
 const popupOpenButton = document.querySelector('.info__edit-button');
 const popupSave = document.querySelector ('.popup__save-button');
+
 const popupCloseButton = document.querySelector('.popup__close-button');
 let Name = document.querySelector('.info__name');
 let Job = document.querySelector('.info__job');
