@@ -4,9 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./vendor/normalize.css">
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./Inter Web/inter.css">
+    <link rel="stylesheet" href="./pages/index.css">
+
     <title>Mesto</title>
 </head>
 
@@ -17,68 +16,75 @@
     <main class="content">
         <section class="profile">
             <img class="profile__avatar" src="./images/image (1).png" alt="фото Жака-Ив Кусто">
-            <div class="profile_info">
-                <p id="name" class="profile__info profile__info_name">Жак-Ив Кусто</p>
-                <img class="profile_info_edit_button" src="./images/Edit Button.svg" alt="плюсик">
-                <p id="surname" class="profile__info profile__info_surname">Исследователь океана</p>
+            <div class="info">
+                <div class="info__name-and-button">
+                    <h1 id="name" class="info__popup-name info__name">Жак-Ив Кусто</h1>
+                    <button class="info__edit-button info__popup-open"></button>
+                </div>
+                <p id="surname" class="info__popup-job info__job">Исследователь океана</p>
             </div>
-            <div class="profile_info_add_button"></div>
+            <button class="profile__add-button"></button>
         </section>
         <section class="elements">
             <ul class="element">
                 <li class="element__card">
-                    <div class="mask_group">
-                        <img class="mask_group_img" src="./images/pavel-neznanov-P8czeVwmB2Q-unsplash (1).png" alt="изображение Ленина, СССР и ГАЗ">
+                    <div class="element__mask-group">
+                        <img class="element__mask-group-img" src="./images/pavel-neznanov-P8czeVwmB2Q-unsplash (1).png"
+                            alt="изображение Ленина, СССР и ГАЗ">
                     </div>
                     <div class="element__item">
-                        <h3 class="element_text">Нижний Новгород</h3>
-                        <img class="element_group" src="./images/Group.svg" alt="сердечко">
+                        <h3 class="element__item-text">Нижний Новгород</h3>
+                        <button class="element__item-group"></button>
                     </div>
                 </li>
                 <li class="element__card">
-                    <div class="mask_group">
-                        <img class="mask_group_img" src="./images/anton-nazaretian-J7bUIC82W24-unsplash.png" alt="берег Балтийского моря">
+                    <div class="element__mask-group">
+                        <img class="element__mask-group-img" src="./images/anton-nazaretian-J7bUIC82W24-unsplash.png"
+                            alt="берег Балтийского моря">
                     </div>
                     <div class="element__item">
-                        <h3 class="element_text">Зеленоградск</h3>
-                        <img class="element_group" src="./images/Group.svg" alt="сердечко">
+                        <h3 class="element__item-text">Зеленоградск</h3>
+                        <button class="element__item-group"></button>
                     </div>
                 </li>
                 <li class="element__card">
-                    <div class="mask_group">
-                        <img class="mask_group_img" src="./images/ivan-stepanov-AuzP6pLANlQ-unsplash.png" alt="дом на воде">
+                    <div class="element__mask-group">
+                        <img class="element__mask-group-img" src="./images/ivan-stepanov-AuzP6pLANlQ-unsplash.png"
+                            alt="дом на воде">
                     </div>
                     <div class="element__item">
-                        <h3 class="element_text">Дубна</h3>
-                        <img class="element_group" src="./images/Group.svg" alt="сердечко">
+                        <h3 class="element__item-text">Дубна</h3>
+                        <button class="element__item-group"></button>
                     </div>
                 </li>
                 <li class="element__card">
-                    <div class="mask_group">
-                        <img class="mask_group_img" src="./images/platon-matakaev-rXcnZxbW0mw-unsplash 2.png"
+                    <div class="element__mask-group">
+                        <img class="element__mask-group-img" src="./images/platon-matakaev-rXcnZxbW0mw-unsplash 2.png"
                             alt="Собор Покрова Пресвятой Богородицы на Рву">
                     </div>
                     <div class="element__item">
-                        <h3 class="element_text">Москва</h3>
-                        <img class="element_group" src="./images/Group.svg" alt="сердечко">
+                        <h3 class="element__item-text">Москва</h3>
+                        <button class="element__item-group"></button>
                     </div>
                 </li>
                 <li class="element__card">
-                    <div class="mask_group">
-                        <img class="mask_group_img" src="./images/dima-fedorov-ZZkw00YCY1E-unsplash 2.png" alt="Морской порт в Сочи">
+                    <div class="element__mask-group">
+                        <img class="element__mask-group-img" src="./images/dima-fedorov-ZZkw00YCY1E-unsplash 2.png"
+                            alt="Морской порт в Сочи">
                     </div>
                     <div class="element__item">
-                        <h3 class="element_text">Сочи</h3>
-                        <img class="element_group" src="./images/Group.svg" alt="сердечко">
+                        <h3 class="element__item-text">Сочи</h3>
+                        <button class="element__item-group"></button>
                     </div>
                 </li>
                 <li class="element__card">
-                    <div class="mask_group">
-                        <img class="mask_group_img" src="./images/alex-glebov-uiTEV1jvlGc-unsplash 2.png" alt="Вилючинский вулкан">
+                    <div class="element__mask-group">
+                        <img class="element__mask-group-img" src="./images/alex-glebov-uiTEV1jvlGc-unsplash 2.png"
+                            alt="Вилючинский вулкан">
                     </div>
                     <div class="element__item">
-                        <h3 class="element_text">Камчатка</h3>
-                        <img class="element_group" src="./images/Group.svg" alt="сердечко">
+                        <h3 class="element__item-text">Камчатка</h3>
+                        <button class="element__item-group"></button>
                     </div>
                 </li>
             </ul>
@@ -88,11 +94,17 @@
     <footer class="footer">
         <p class="footer__copyright">© 2023 Mesto Russia</p>
     </footer>
-    <section class="popup">
+    <section class="popup ">
         <div class="popup__container">
             <h2 class="popup__title">Редактировать профиль</h2>
+            <form class="form">
+            <input class="popup__name" type="text">
+            <input class="popup__job" type="text">
+            <button class="popup__save  popup__save-button"><span class="popup__save-button-text">Сохранить</span></button>
+            <input class="popup__close popup__close-button" type="button">
+        </form>
         </div>
     </section>
 </body>
-
+<script type="text/javascript" src="./scripts/index.js"></script>
 </html>

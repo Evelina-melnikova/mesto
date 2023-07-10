@@ -1,0 +1,15 @@
+
+.element__item-group {
+    width: 22px;
+    height: 19px;
+    background-image: url(../../../images/Group.svg);
+    border: none;
+    background-color: #FFF;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.element__item-group:hover {
+    opacity: 0.6;
+    transition: 0.5s;
+}

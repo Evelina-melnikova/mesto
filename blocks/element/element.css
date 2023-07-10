@@ -1,0 +1,25 @@
+.element {
+    padding-left: 0;
+    margin-bottom: 0;
+    column-gap: 17px;
+    row-gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0;
+    list-style: none;
+
+}
+
+
+@media screen and (max-width:320px) {
+    .element {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width:640px) {
+    .element {
+        justify-content: center;
+
+    }
+}
