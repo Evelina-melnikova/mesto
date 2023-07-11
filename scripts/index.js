@@ -7,8 +7,8 @@ let Name = document.querySelector('.profile__info-name');
 let Job = document.querySelector('.profile__info-popup-job');
 
 const formElement = document.querySelector('.name');
-let nameInput = document.querySelector('.popup__name_value');
-let jobInput = document.querySelector('.popup__job_value');
+let nameInput = document.querySelector('.popup__name-value');
+let jobInput = document.querySelector('.popup__job-value');
 
 const popupToggle = function (){
     popup.classList.toggle('popup_opened'); 
