@@ -1,5 +1,5 @@
 
-.info__name-and-button {
+.profile__info-name-and-button {
     display: flex;
     flex-direction: row;
 }

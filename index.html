@@ -16,73 +16,71 @@
     <main class="content">
         <section class="profile">
             <img class="profile__avatar" src="./images/avatar.png" alt="фото Жака-Ив Кусто">
-            <div class="info">
-                <div class="info__name-and-button">
-                    <h1 id="name" class="info__popup-name info__name">Жак-Ив Кусто</h1>
-                    <button class="info__edit-button info__popup-open"></button>
+            <div class="profile__info">
+                <div class="profile__info-name-and-button">
+                    <h1 id="name" class="profile__info-name">Жак-Ив Кусто</h1>
+                    <button class="profile__info-edit-button" type="submit"></button>
                 </div>
-                <p id="surname" class="info__popup-job info__job">Исследователь океана</p>
+                <p id="surname" class="profile__info-popup-job">Исследователь океана</p>
             </div>
-            <button class="profile__add-button"></button>
+            <button class="profile__add-button" type="submit"></button>
         </section>
         <section class="elements">
-            <ul class="element">
-                <li class="element__card">
-                    <div class="element__mask-group">
-                        <img class="element__mask-group-img" src="./images/novgorod.png"
+            <ul class="elements__element">
+                <li class="elements__element-card">
+                    <div class="elements__element-group">
+                        <img class="elements__element-img" src="./images/novgorod.png"
                             alt="изображение Ленина, СССР и ГАЗ">
                     </div>
-                    <div class="element__item">
-                        <h3 class="element__item-text">Нижний Новгород</h3>
-                        <button class="element__item-group"></button>
+                    <div class="elements__element-item">
+                        <h2 class="elements__element-item-text">Нижний Новгород</h2>
+                        <button class="elements__element-item-group" type="submit"></button>
                     </div>
                 </li>
-                <li class="element__card">
-                    <div class="element__mask-group">
-                        <img class="element__mask-group-img" src="./images/zelenogradsk.png"
-                            alt="берег Балтийского моря">
+                <li class="elements__element-card">
+                    <div class="elements__element-group">
+                        <img class="elements__element-img" src="./images/zelenogradsk.png" alt="берег Балтийского моря">
                     </div>
-                    <div class="element__item">
-                        <h3 class="element__item-text">Зеленоградск</h3>
-                        <button class="element__item-group"></button>
-                    </div>
-                </li>
-                <li class="element__card">
-                    <div class="element__mask-group">
-                        <img class="element__mask-group-img" src="./images/dubna.png"
-                            alt="дом на воде">
-                    </div>
-                    <div class="element__item">
-                        <h3 class="element__item-text">Дубна</h3>
-                        <button class="element__item-group"></button>
+                    <div class="elements__element-item">
+                        <h2 class="elements__element-item-text">Зеленоградск</h2>
+                        <button class="elements__element-item-group" type="submit"></button>
                     </div>
                 </li>
-                <li class="element__card">
-                    <div class="element__mask-group">
-                        <img class="element__mask-group-img" src="./images/moscow.jpg"
+                <li class="elements__element-card">
+                    <div class="elements__element-group">
+                        <img class="elements__element-img" src="./images/dubna.png" alt="дом на воде">
+                    </div>
+                    <div class="elements__element-item">
+                        <h2 class="elements__element-item-text">Дубна</h2>
+                        <button class="elements__element-item-group" type="submit"></button>
+                    </div>
+                </li>
+                <li class="elements__element-card">
+                    <div class="elements__element-group">
+                        <img class="elements__element-img" src="./images/moscow.jpg"
                             alt="Собор Покрова Пресвятой Богородицы на Рву">
                     </div>
-                    <div class="element__item">
-                        <h3 class="element__item-text">Москва</h3>
-                        <button class="element__item-group"></button>
+                    <div class="elements__element-item">
+                        <h2 class="elements__element-item-text">Москва</h2>
+                        <button class="elements__element-item-group" type="submit"></button>
                     </div>
                 </li>
-                <li class="element__card">
-                    <div class="element__mask-group">
-                        <img class="element__mask-group-img" src="./images/Sochi.jpg" alt="Морской порт в Сочи">
+                <li class="elements__element-card">
+                    <div class="elements__element-group">
+                        <img class="elements__element-img" src="./images/Sochi.jpg" alt="Морской порт в Сочи">
                     </div>
-                    <div class="element__item">
-                        <h3 class="element__item-text">Сочи</h3>
-                        <button class="element__item-group"></button>
+                    <div class="elements__element-item">
+                        <h2 class="elements__element-item-text">Сочи</h2>
+                        <button class="elements__element-item-group" type="submit"></button>
                     </div>
                 </li>
-                <li class="element__card">
-                    <div class="element__mask-group">
-                        <img class="element__mask-group-img" src="./images/kamchatka.png" alt="Вилючинский вулкан">
+                <li class="elements__element-card">
+                    <div class="elements__element-group">
+                        <img class="elements__element-img" src="./images/kamchatka.png" alt="Вилючинский вулкан">
                     </div>
-                    <div class="element__item">
-                        <h3 class="element__item-text">Камчатка</h3>
-                        <button class="element__item-group"></button>
+                    <div class="elements__element-item">
+                        <h2 class="elements__element-item-text">Камчатка</h2>
+                        <button class="elements__element-item-group" type="submit"></button>
                     </div>
                 </li>
             </ul>
@@ -91,16 +89,17 @@
     <footer class="footer">
         <p class="footer__copyright">© 2023 Mesto Russia</p>
     </footer>
-    <section class="popup ">
+    <section class="popup">
         <div class="popup__container">
             <h2 class="popup__title">Редактировать профиль</h2>
-            <form class="form">
-                <input class="popup__name" type="text">
-                <input class="popup__job" type="text">
-                <button class="popup__save  popup__save-button"><span
-                        class="popup__save-button-text">Сохранить</span></button>
-                <input class="popup__close popup__close-button" type="button">
+            <form class="name">
+                <input class="popup__input popup__name_value" type="name">
+                <input class="popup__input popup__job_value" type="name">
+                <button class="popup__save  popup__save-button" type="submit">
+                    Сохранить
+                </button>
             </form>
+            <button class="popup__close popup__close-button" type="submit"> </button>
         </div>
     </section>
 </body>

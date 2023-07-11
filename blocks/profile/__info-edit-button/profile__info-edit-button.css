@@ -1,5 +1,5 @@
 
-.info__edit-button {
+.profile__info-edit-button {
     margin-left: 18px;
     margin-top: 15px;
     width: 24px;
@@ -8,24 +8,26 @@
     background: none;
     background-image: url(../../../images/Vector\ \(1\).svg);
     background-repeat: no-repeat;
-    border: 2px solid #FFF;
+    border: 1px solid #FFF;
     background-position: center;
     transition: 0.5s;
     cursor: pointer;
+    background-size: 10px 10px;
+
 }
 
-.info__edit-button:hover {
+.profile__info-edit-button:hover {
     opacity: 0.6;
-    transition: 0.5s;
 }
 
 
 @media screen and (min-width:320px) and (max-width:639px) {
-    .info__edit-button {
+    .profile__info-edit-button {
         margin-top: 8px;
         margin-left: 10px;
         width: 18px;
         height: 18px;
         background-repeat: no-repeat;
+        background-size: 7.5px 7.5px;
     }
 }

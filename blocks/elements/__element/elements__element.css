@@ -1,4 +1,4 @@
-.element {
+.elements__element {
     padding-left: 0;
     margin-bottom: 0;
     column-gap: 17px;
@@ -11,15 +11,16 @@
 }
 
 
-@media screen and (max-width:320px) {
-    .element {
+@media screen and (max-width:640px) {
+    .elements__element {
         justify-content: center;
+
     }
 }
 
-@media screen and (max-width:640px) {
-    .element {
-        justify-content: center;
 
+@media screen and (max-width:320px) {
+    .elements__element {
+        justify-content: center;
     }
 }

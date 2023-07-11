@@ -1,5 +1,4 @@
-
-.element__item-group {
+.elements__element-item-group {
     width: 22px;
     height: 19px;
     background-image: url(../../../images/Group.svg);
@@ -8,9 +7,9 @@
     transition: 0.5s;
     cursor: pointer;
     background-repeat: no-repeat;
+    padding: 0;
 }
 
-.element__item-group:hover {
+.elements__element-item-group:hover {
     opacity: 0.6;
-    transition: 0.5s;
 }

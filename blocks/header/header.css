@@ -4,10 +4,16 @@
     margin-left: auto;
     margin-right: auto;
     border-bottom: 1px solid rgba(84, 84, 84, 0.7);
-    border-style: solid;
     padding-top: 45px;
 }
 
+@media screen and (max-width:640px) {
+    .header {
+        max-width: 85%;
+        min-height: 65px;
+        padding-top: 32px;
+    }
+}
 
 @media screen and (max-width:320px) {
     .header {
@@ -18,10 +24,3 @@
     }
 }
 
-@media screen and (max-width:640px) {
-    .header {
-        max-width: 85%;
-        min-height: 65px;
-        padding-top: 32px;
-    }
-}

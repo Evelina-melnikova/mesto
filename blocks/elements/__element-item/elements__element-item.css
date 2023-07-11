@@ -1,5 +1,4 @@
-
-.element__item {
+.elements__element-item {
     display: flex;
     max-width: 246px;
     min-height: 23px;
