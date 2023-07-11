@@ -14,7 +14,6 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    box-sizing: content-box;
 }
 
 @media screen and (min-width:320px) and (max-width:639px) {

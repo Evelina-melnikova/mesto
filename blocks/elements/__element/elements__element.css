@@ -19,8 +19,3 @@
 }
 
 
-@media screen and (max-width:320px) {
-    .elements__element {
-        justify-content: center;
-    }
-}
