@@ -1,15 +1,17 @@
-.popup__name-value {
+.popup__input_type_name {
     width: 358px;
-    height: 30px;
-    padding: 0;
-    margin-top: 54px;
+    height: 14px;
+    padding-bottom: 13px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    margin-top: 49px;
     margin-left: 36px;
     border-left: none;
     border-top: none;
     border-right: none;
     border-bottom: 1px solid rgba(0, 0, 0, .2);
     color: #000;
-    font-family: Inter;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -17,7 +19,7 @@
 }
 
 @media screen and (min-width:320px) and (max-width:639px) {
-    .popup__name-value {
+    .popup__input_type_name {
         margin-top: 75px;
         margin-left: 22px;
         width: 238px;

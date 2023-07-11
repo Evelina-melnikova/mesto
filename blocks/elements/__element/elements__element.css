@@ -7,15 +7,8 @@
     flex-wrap: wrap;
     margin-top: 0;
     list-style: none;
-
+    justify-content: center;
 }
 
-
-@media screen and (max-width:640px) {
-    .elements__element {
-        justify-content: center;
-
-    }
-}
 
 

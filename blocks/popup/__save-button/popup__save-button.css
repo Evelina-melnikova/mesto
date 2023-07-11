@@ -6,12 +6,18 @@
     height: 50px;
     margin-left: 36px;
     padding: 0;
-    margin-top: 48px;
+    margin-top: 45px;
     border: none;
     z-index: 1;
     transition: .5s;
     cursor: pointer;
-    color: #fff;
+    color: #FFF;
+    text-align: center;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;  
+     margin-bottom: 37px;
 }
 
 .popup__save-button:hover {
@@ -24,5 +30,7 @@
         margin-left: 22px;
         width: 238px;
         height: 46px;
+        margin-bottom: 25px;
+        font-size: 14px;
     }
 }
