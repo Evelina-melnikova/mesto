@@ -17,12 +17,14 @@
 
 @import url(../blocks/elements/elements.css);
 @import url(../blocks/elements/__element/elements__element.css);
+@import url(../blocks/elements/__element-group/elements__element-group.css);
 @import url(../blocks/elements/__element-card/elements__element-card.css);
 @import url(../blocks/elements/__element-item-group/elements__element-item-group.css);
 @import url(../blocks/elements/__element-img/elements__element-img.css);
+@import url(../blocks/elements/__element-delete/elements__element-delete.css);
+@import url(../blocks/elements/__element-like-active/elements__element-like-active.css);
 @import url(../blocks/elements/__element-item/elements__element-item.css);
 @import url(../blocks/elements/__element-item-text/elements__element-item-text.css);
-@import url(../blocks/elements/__element-item-group/elements__element-item-group.css);
 
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copyright/footer__copyright.css);
@@ -36,6 +38,9 @@
 @import url(../blocks/popup/__close-button/popup__close-button.css);
 
 
+@import url(../blocks/popup/_add/popup_add.css);
+@import url(../blocks/popup/_opened/_add/popup_opened_add.css);
+@import url(../blocks/popup/close-button-add/popup__close-button-add.css);
 
 
 

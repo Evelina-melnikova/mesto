@@ -25,64 +25,9 @@
             </div>
             <button class="profile__add-button" type="button"></button>
         </section>
-        <section class="elements">
+       <section class="elements">
             <ul class="elements__element">
-                <li class="elements__element-card">
-                    <div class="elements__element-group">
-                        <img class="elements__element-img" src="./images/novgorod.png"
-                            alt="изображение Ленина, СССР и ГАЗ">
-                    </div>
-                    <div class="elements__element-item">
-                        <h2 class="elements__element-item-text">Нижний Новгород</h2>
-                        <button class="elements__element-item-group" type="button"></button>
-                    </div>
-                </li>
-                <li class="elements__element-card">
-                    <div class="elements__element-group">
-                        <img class="elements__element-img" src="./images/zelenogradsk.png" alt="берег Балтийского моря">
-                    </div>
-                    <div class="elements__element-item">
-                        <h2 class="elements__element-item-text">Зеленоградск</h2>
-                        <button class="elements__element-item-group" type="button"></button>
-                    </div>
-                </li>
-                <li class="elements__element-card">
-                    <div class="elements__element-group">
-                        <img class="elements__element-img" src="./images/dubna.png" alt="дом на воде">
-                    </div>
-                    <div class="elements__element-item">
-                        <h2 class="elements__element-item-text">Дубна</h2>
-                        <button class="elements__element-item-group" type="button"></button>
-                    </div>
-                </li>
-                <li class="elements__element-card">
-                    <div class="elements__element-group">
-                        <img class="elements__element-img" src="./images/moscow.jpg"
-                            alt="Собор Покрова Пресвятой Богородицы на Рву">
-                    </div>
-                    <div class="elements__element-item">
-                        <h2 class="elements__element-item-text">Москва</h2>
-                        <button class="elements__element-item-group" type="button"></button>
-                    </div>
-                </li>
-                <li class="elements__element-card">
-                    <div class="elements__element-group">
-                        <img class="elements__element-img" src="./images/Sochi.jpg" alt="Морской порт в Сочи">
-                    </div>
-                    <div class="elements__element-item">
-                        <h2 class="elements__element-item-text">Сочи</h2>
-                        <button class="elements__element-item-group" type="button"></button>
-                    </div>
-                </li>
-                <li class="elements__element-card">
-                    <div class="elements__element-group">
-                        <img class="elements__element-img" src="./images/kamchatka.png" alt="Вилючинский вулкан">
-                    </div>
-                    <div class="elements__element-item">
-                        <h2 class="elements__element-item-text">Камчатка</h2>
-                        <button class="elements__element-item-group" type="button"></button>
-                    </div>
-                </li>
+    
             </ul>
         </section>
     </main>
@@ -102,6 +47,32 @@
             <button class="popup__close-button" type="button"> </button>
         </div>
     </section>
+    <section class="popup popup_add">
+        <div class="popup__container">
+            <h2 class="popup__title">Новое место</h2>
+            <form class="popup__form popup__form-add" name="popup__form-add">
+                <input class="popup__input popup__input_type_sound" placeholder="Название" type="text" name="sound">
+                <input class="popup__input popup__input_type_link" placeholder="Ссылка на картинку" type="text"
+                    name="link">
+                <button class="popup__save-button popup__save-add-button" type="submit">
+                    Создать
+                </button>
+            </form>
+            <button class="popup__close-button popup__close-button-add" type="button"> </button>
+        </div>
+    </section>
+    <template class="templateEl">
+        <li class="elements__element-card">
+            <div class="elements__element-group">
+                <button class="elements__element-delete" type="button"></button>
+                <img class="elements__element-img" src="" alt=""></div>
+            </div>
+            <div class="elements__element-item">
+                <h2 class="elements__element-item-text"></h2>
+                <button class="elements__element-item-group" type="button"></button>
+            </div>
+        </li>
+    </template>
     <script type="text/javascript" src="./scripts/index.js"></script>
 </body>
 
