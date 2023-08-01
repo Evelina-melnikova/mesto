@@ -1,5 +1,5 @@
 
-const popupProfile = document.querySelector('.popup__type_profile-edit');
+const popupProfile = document.querySelector('.popup_type_profile-edit');
 const popupOpenButton = document.querySelector('.profile__info-edit-button');
 const popupCloseButton = document.querySelector('.popup__close-button_profile-edit');
 const profileName = document.querySelector('.profile__info-name');
@@ -83,7 +83,7 @@ const initialCards = [
 
 const template = document.querySelector('.templateEl')
 const elementsContainer = document.querySelector('.elements__element');
-const popupAdd = document.querySelector('.popup__type_cards-add');
+const popupAdd = document.querySelector('.popup_type_cards-add');
 const popupOpenAddButton = document.querySelector('.profile__add-button');
 const popupCloseButtonAdd = document.querySelector('.popup__close-button_cards-add');
 const formElAdd = document.querySelector('.popup__form_cards-add');
@@ -92,7 +92,7 @@ const photo = document.querySelector('.elements__element-img');
 const soundInput = document.querySelector('.popup__input_type_sound');
 const photoInput = document.querySelector('.popup__input_type_link');
 
-const popupPhoto = document.querySelector('.popup__photo');
+const popupPhoto = document.querySelector('.popup_photo');
 const popupCloseButtonPhoto = document.querySelector('.popup__close-button_photo');
 const popupPhotoText = document.querySelector('.popup__photo-text');
 const popupPhotoImg = document.querySelector('.popup__open-img');
