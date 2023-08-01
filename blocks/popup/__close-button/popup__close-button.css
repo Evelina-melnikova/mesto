@@ -10,12 +10,13 @@
     right: -40px;
     top: -40px;
     background-color: rgba(0, 0, 0, 0);
-    transition: .5s;
     cursor: pointer;
 }
 
 .popup__close-button:hover {
     opacity: 0.6;
+        transition: .5s;
+
 }
 
 @media screen and (min-width:320px) and (max-width:640px) {

@@ -33,35 +33,35 @@
     <footer class="footer">
         <p class="footer__copyright">© 2023 Mesto Russia</p>
     </footer>
-    <section class="popup">
-        <div class="popup__container">
-            <h2 class="popup__title">Редактировать профиль</h2>
-            <form class="popup__form" name="popup__form">
+    <section class="popup popup__type_profile-edit">
+        <div class="popup__container popup__container_profile-edit">
+            <h2 class="popup__title popup__title_profile-edit">Редактировать профиль</h2>
+            <form class="popup__form popup__form_profile-edit" name="popup__form">
                 <input class="popup__input popup__input_type_name" type="text" name="name">
                 <input class="popup__input popup__input_type_job" type="text" name="job">
-                <button class="popup__save-button" type="submit">
+                <button class="popup__save-button popup__save-button_profile-edit" type="submit">
                     Сохранить
                 </button>
             </form>
-            <button class="popup__close-button" type="button"> </button>
+            <button class="popup__close-button popup__close-button_profile-edit" type="button"> </button>
         </div>
     </section>
-    <section class="popup popup_add">
-        <div class="popup__container">
-            <h2 class="popup__title">Новое место</h2>
-            <form class="popup__form popup__form-add" name="popup__form-add">
+    <section class="popup popup__type_cards-add">
+        <div class="popup__container popup__container_cards-add">
+            <h2 class="popup__title popup__title_cards-add">Новое место</h2>
+            <form class="popup__form popup__form_cards-add" name="popup__form-add">
                 <input class="popup__input popup__input_type_sound" placeholder="Название" type="text" name="sound">
                 <input class="popup__input popup__input_type_link" placeholder="Ссылка на картинку" type="text"
                     name="link">
-                <button class="popup__save-button popup__save-add-button" type="submit">
+                <button class="popup__save-button popup__save-button_cards-add" type="submit">
                     Создать
                 </button>
             </form>
-            <button class="popup__close-button popup__close-button-add" type="button"> </button>
+            <button class="popup__close-button popup__close-button_cards-add" type="button"> </button>
         </div>
     </section>
-    <section class="popup popup_photo">
-        <div class="popup__container popup__container-photo">
+    <section class="popup popup__photo">
+        <div class="popup__container popup__container_photo">
             <button class="popup__close-button popup__close-button_photo" type="button"></button>
             <img class="popup__open-img">
             <p class="popup__photo-text"></p>
