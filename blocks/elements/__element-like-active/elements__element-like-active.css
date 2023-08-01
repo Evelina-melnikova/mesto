@@ -12,3 +12,6 @@
     }
     
 
+    .elements__element-like-active:hover{
+        opacity: 100;
+    }

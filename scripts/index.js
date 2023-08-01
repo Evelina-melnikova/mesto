@@ -85,6 +85,11 @@ const photo = document.querySelector('.elements__element-img');
 const soundInput = document.querySelector('.popup__input_type_sound');
 const photoInput = document.querySelector('.popup__input_type_link');
 
+const popupPhoto = document.querySelector('.popup_photo');
+const popupCloseButtonPhoto = document.querySelector('.popup__close-button_photo');
+const popupPhotoText = document.querySelector('.popup__photo-text');
+const popupPhotoImg = document.querySelector(('.popup__open-img'));
+
 
 const popupAddToggle = function () {
     popupAdd.classList.toggle('popup_opened_add');
@@ -97,6 +102,16 @@ popupOpenAddButton.addEventListener("click", function () {
 popupCloseButtonAdd.addEventListener("click", function () {
     popupAddToggle()
 })
+
+
+const popupPhotoToggle = function (){
+    popupPhoto.classList.toggle('popup_opened_photo')
+}
+
+popupCloseButtonPhoto.addEventListener("click", function () {
+    popupPhotoToggle()
+});
+
 
 const render = () => {
     initialCards.forEach((item) => {
@@ -117,11 +132,24 @@ const createElByTemplate = (data) => {
     const likeElBtn = el.querySelector('.elements__element-item-group');
     likeElBtn.addEventListener('click', likeBtn);
 
+    const popupOpenButtonPhoto = el.querySelector('.elements__element-img');
+
+    const popupOpenPh = function () {
+        popupPhotoToggle()
+        popupPhotoText.textContent = data.name;
+        popupPhotoImg.src = data.link;
+    }
+    popupOpenButtonPhoto.addEventListener('click', popupOpenPh);
+
+
+
     return el;
 }
 function handleFormSubmitAdd(evt) {
     evt.preventDefault();
     elementsContainer.prepend(createElByTemplate({ name: soundInput.value, link: photoInput.value }));
+    soundInput.value = "" ;
+    photoInput.value = "";
     popupAddToggle()
 }
 
@@ -139,6 +167,6 @@ render()
 
 
 
-formElAdd.addEventListener('sumbit', handleFormSubmitAdd);
+formElAdd.addEventListener('submit', handleFormSubmitAdd);
 
 

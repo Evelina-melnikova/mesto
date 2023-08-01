@@ -1,0 +1,15 @@
+.popup__container-photo {
+    max-width: 816px;
+    min-height: 540px;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 0;
+    margin: auto;
+
+}
+
+@media screen and (min-width:320px) and (max-width:639px) {
+    .popup__container-photo {
+        max-width: 240px;
+        min-height: 322px;
+    }
+}

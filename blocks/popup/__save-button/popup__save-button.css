@@ -8,8 +8,6 @@
     padding: 0;
     margin-top: 45px;
     border: none;
-    z-index: 1;
-    transition: .5s;
     cursor: pointer;
     color: #FFF;
     text-align: center;
@@ -22,6 +20,8 @@
 
 .popup__save-button:hover {
     opacity: 0.8;
+    transition: .9s;
+
 }
 
 @media screen and (min-width:320px) and (max-width:639px) {
