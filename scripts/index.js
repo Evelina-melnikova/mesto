@@ -7,53 +7,20 @@ const profileJob = document.querySelector('.profile__info-popup-job');
 const formElement = document.querySelector('.popup__form_profile-edit');
 const nameInput = document.querySelector('.popup__input_type_name');
 const jobInput = document.querySelector('.popup__input_type_job');
-
-function openPopup(popup) {
-    popup.classList.add('popup_opened');
-}
-
-function closePopup(popup) {
-    popup.classList.remove('popup_opened');
-}
-
-function handleFormSubmit(evt) {
-    evt.preventDefault();
-    const profileNameValue = nameInput.value;
-    const profileJobValue = jobInput.value;
-    profileName.textContent = profileNameValue;
-    profileJob.textContent = profileJobValue;
-    popupCloseButtonProfile();
-}
-
-const popupOpenButtonProfile = function () {
-    openPopup(popupProfile);
-    nameInput.value = profileName.textContent;
-    jobInput.value = profileJob.textContent;
-};
-
-const popupCloseButtonProfile = function () {
-    closePopup(popupProfile);
-}
-
-
-popupOpenButton.addEventListener('click', popupOpenButtonProfile);
-popupCloseButton.addEventListener('click', popupCloseButtonProfile);
-formElement.addEventListener('submit', handleFormSubmit);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+const template = document.querySelector('.templateEl');
+const elementsContainer = document.querySelector('.elements__element');
+const popupAdd = document.querySelector('.popup_type_cards-add');
+const popupOpenAddButton = document.querySelector('.profile__add-button');
+const popupCloseButtonAdd = document.querySelector('.popup__close-button_cards-add');
+const formElAdd = document.querySelector('.popup__form_cards-add');
+const sound = document.querySelector('.elements__element-item-text');
+const photo = document.querySelector('.elements__element-img');
+const soundInput = document.querySelector('.popup__input_type_sound');
+const photoInput = document.querySelector('.popup__input_type_link');
+const popupPhoto = document.querySelector('.popup_photo');
+const popupCloseButtonPhoto = document.querySelector('.popup__close-button_photo');
+const popupPhotoText = document.querySelector('.popup__photo-text');
+const popupPhotoImg = document.querySelector('.popup__open-img');
 const initialCards = [
     {
         name: 'Нижний Новгород',
@@ -81,27 +48,34 @@ const initialCards = [
     }
 ];
 
-const template = document.querySelector('.templateEl')
-const elementsContainer = document.querySelector('.elements__element');
-const popupAdd = document.querySelector('.popup_type_cards-add');
-const popupOpenAddButton = document.querySelector('.profile__add-button');
-const popupCloseButtonAdd = document.querySelector('.popup__close-button_cards-add');
-const formElAdd = document.querySelector('.popup__form_cards-add');
-const sound = document.querySelector('.elements__element-item-text');
-const photo = document.querySelector('.elements__element-img');
-const soundInput = document.querySelector('.popup__input_type_sound');
-const photoInput = document.querySelector('.popup__input_type_link');
 
-const popupPhoto = document.querySelector('.popup_photo');
-const popupCloseButtonPhoto = document.querySelector('.popup__close-button_photo');
-const popupPhotoText = document.querySelector('.popup__photo-text');
-const popupPhotoImg = document.querySelector('.popup__open-img');
+const popupOpenButtonProfile = function () {
+    openPopup(popupProfile);
+    nameInput.value = profileName.textContent;
+    jobInput.value = profileJob.textContent;
+};
+const openBtnPopupAdd = function () {
+    openPopup(popupAdd);
+};
+
+const popupCloseButtonProfile = function () {
+    closePopup(popupProfile);
+};
+
+const closeBtnPopupAdd = function () {
+    closePopup(popupAdd);
+};
+
+const popupClosePh = function () {
+    closePopup(popupPhoto);
+};
 
 const render = () => {
     initialCards.forEach((item) => {
         elementsContainer.append(createElByTemplate(item));
     });
 };
+
 const deleteEl = (evt) => {
     const delEl = evt.target.closest('.elements__element-card');
     delEl.remove();
@@ -111,12 +85,6 @@ const likeBtn = (evt) => {
     evt.target.classList.toggle('elements__element-like-active');
 };
 
-const openBtnPopupAdd = function () {
-    openPopup(popupAdd);
-}
-const closeBtnPopupAdd = function () {
-    closePopup(popupAdd);
-}
 const createElByTemplate = (data) => {
     const el = template.content.cloneNode(true);
     const title = el.querySelector('.elements__element-item-text');
@@ -139,30 +107,40 @@ const createElByTemplate = (data) => {
         popupPhotoImg.src = data.link;
     }
     popupOpenButtonPhoto.addEventListener('click', popupOpenPh);
-    
-    const popupClosePh = function () {
-        closePopup(popupPhoto);
-      }
-      
-      popupCloseButtonPhoto.addEventListener('click', popupOpenPh);
-      popupCloseButtonPhoto.addEventListener('click', popupClosePh);
-
     return el;
-}
+};
 
+function openPopup(popup) {
+    popup.classList.add('popup_opened');
+};
 
+function closePopup(popup) {
+    popup.classList.remove('popup_opened');
+};
 
+function handleFormSubmit(evt) {
+    evt.preventDefault();
+    const profileNameValue = nameInput.value;
+    const profileJobValue = jobInput.value;
+    profileName.textContent = profileNameValue;
+    profileJob.textContent = profileJobValue;
+    popupCloseButtonProfile();
+};
 
 function handleFormSubmitAdd(evt) {
     evt.preventDefault();
     elementsContainer.prepend(createElByTemplate({ name: soundInput.value, link: photoInput.value }));
     evt.target.reset();
     closeBtnPopupAdd();
-}
+};
 
+render();
 
-render()
+popupOpenButton.addEventListener('click', popupOpenButtonProfile);
+popupCloseButton.addEventListener('click', popupCloseButtonProfile);
+formElement.addEventListener('submit', handleFormSubmit);
 formElAdd.addEventListener('submit', handleFormSubmitAdd);
+popupCloseButtonPhoto.addEventListener('click', popupClosePh);
 popupOpenAddButton.addEventListener('click', openBtnPopupAdd);
 popupCloseButtonAdd.addEventListener('click', closeBtnPopupAdd);
 
