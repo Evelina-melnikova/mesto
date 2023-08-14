@@ -36,10 +36,14 @@
     <section class="popup popup_type_profile-edit">
         <div class="popup__container popup__container_profile-edit">
             <h2 class="popup__title popup__title_profile-edit">Редактировать профиль</h2>
-            <form class="popup__form popup__form_profile-edit" name="popup__form">
-                <input class="popup__input popup__input_type_name" type="text" name="name">
-                <input class="popup__input popup__input_type_job" type="text" name="job">
-                <button class="popup__save-button popup__save-button_profile-edit" type="submit">
+            <form class="popup__form popup__form_profile-edit" name="popup__form"  novalidate>
+                <input class="popup__input popup__input_type_name" type="text" id="name" name="name" minlength="2" maxlength="40" required>
+                <span id="name-error" class="error"></span>
+
+                <input class="popup__input popup__input_type_job" type="text" id="job" name="job" minlength="2" maxlength="200" required >
+                <span id="job-error" class="error"></span>
+
+                <button class="popup__save-button popup__save-button_profile-edit" type="submit" disabled>
                     Сохранить
                 </button>
             </form>
@@ -49,11 +53,15 @@
     <section class="popup popup_type_cards-add">
         <div class="popup__container popup__container_cards-add">
             <h2 class="popup__title popup__title_cards-add">Новое место</h2>
-            <form class="popup__form popup__form_cards-add" name="popup__form-add">
-                <input class="popup__input popup__input_type_sound" placeholder="Название" type="text" name="sound">
-                <input class="popup__input popup__input_type_link" placeholder="Ссылка на картинку" type="text"
-                    name="link">
-                <button class="popup__save-button popup__save-button_cards-add" type="submit">
+            <form class="popup__form popup__form_cards-add" name="popup__form-add" novalidate>
+                <input class="popup__input popup__input_type_sound" placeholder="Название" type="text" id="sound" name="sound" minlength="2" maxlength="30"  required>
+                <span id="sound-error" class="error"></span> 
+
+                <input class="popup__input popup__input_type_link" placeholder="Ссылка на картинку" type="url"
+                id="link"  name="link" required>
+                <span id="link-error" class="error"></span>
+
+                <button class="popup__save-button popup__save-button-invalid popup__save-button_cards-add" type="submit" disabled>
                     Создать
                 </button>
             </form>
@@ -80,6 +88,8 @@
         </li>
     </template>
     <script type="text/javascript" src="./scripts/index.js"></script>
+    <script type="text/javascript" src="./scripts/validate.js"></script>
+
 </body>
 
 
