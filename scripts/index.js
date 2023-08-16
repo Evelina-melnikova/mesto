@@ -1,10 +1,9 @@
-
 const popupProfile = document.querySelector('.popup_type_profile-edit');
 const popupOpenButton = document.querySelector('.profile__info-edit-button');
 const popupCloseButton = document.querySelector('.popup__close-button_profile-edit');
 const profileName = document.querySelector('.profile__info-name');
 const profileJob = document.querySelector('.profile__info-popup-job');
-const formElement = document.querySelector('.popup__form_profile-edit');
+const formElProf = document.querySelector('.popup__form_profile-edit');
 const nameInput = document.querySelector('.popup__input_type_name');
 const jobInput = document.querySelector('.popup__input_type_job');
 const template = document.querySelector('.templateEl');
@@ -21,6 +20,9 @@ const popupPhoto = document.querySelector('.popup_photo');
 const popupCloseButtonPhoto = document.querySelector('.popup__close-button_photo');
 const popupPhotoText = document.querySelector('.popup__photo-text');
 const popupPhotoImg = document.querySelector('.popup__open-img');
+const form = document.querySelector('.popup__form');
+const input = document.querySelector('.popup__input');
+
 const initialCards = [
     {
         name: 'Нижний Новгород',
@@ -110,12 +112,30 @@ const createElByTemplate = (data) => {
     return el;
 };
 
+function popupCloseEsc (evt) {
+    if ( evt.key === 'Escape' ){
+        const popupClosed = document.querySelector('.popup_opened');
+        closePopup(popupClosed);
+    };
+};
+
+
+
+
+const popupCloseOverlay = function (evt) {
+    if (evt.currentTarget === evt.target){
+        closePopup(evt.target);
+};
+};
+
 function openPopup(popup) {
     popup.classList.add('popup_opened');
+    document.addEventListener('keydown', popupCloseEsc)
 };
 
 function closePopup(popup) {
     popup.classList.remove('popup_opened');
+    document.removeEventListener('keydown', popupCloseEsc)
 };
 
 function handleFormSubmit(evt) {
@@ -138,14 +158,14 @@ render();
 
 popupOpenButton.addEventListener('click', popupOpenButtonProfile);
 popupCloseButton.addEventListener('click', popupCloseButtonProfile);
-formElement.addEventListener('submit', handleFormSubmit);
+formElProf.addEventListener('submit', handleFormSubmit);
 formElAdd.addEventListener('submit', handleFormSubmitAdd);
 popupCloseButtonPhoto.addEventListener('click', popupClosePh);
 popupOpenAddButton.addEventListener('click', openBtnPopupAdd);
 popupCloseButtonAdd.addEventListener('click', closeBtnPopupAdd);
-
-
-
+popupPhoto.addEventListener('click',popupCloseOverlay)
+popupAdd.addEventListener('click',popupCloseOverlay)
+popupProfile.addEventListener('click', popupCloseOverlay)
 
 
 
