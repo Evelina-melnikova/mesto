@@ -113,7 +113,7 @@ const createElByTemplate = (data) => {
 };
 
 function popupCloseEsc (evt) {
-    if ( evt.key === 'Escape' ){
+    if ( evt.keyCode == 27){
         const popupClosed = document.querySelector('.popup_opened');
         closePopup(popupClosed);
     };
