@@ -26,14 +26,14 @@ const checkFormValidity = (form, btnElement) => {
 };
 
 const showInputError = (inputElForm, configValidation) => {
-    var errorEl = document.querySelector(`#${inputElForm.id}-error`)
+    const errorEl = document.querySelector(`#${inputElForm.id}-error`)
     errorEl.textContent = inputElForm.validationMessage;
     inputElForm.classList.add(configValidation.inputErrorClass);
 }
 const hideInputError = (inputElForm, configValidation) => {
-    var errorEl = document.querySelector(`#${inputElForm.id}-error`)
-    errorEl.textContent = '';
+    const errorEl = document.querySelector(`#${inputElForm.id}-error`)
     inputElForm.classList.remove(configValidation.inputErrorClass);
+    errorEl.textContent = '';
 }
 
 const checkInputValidity = (inputElForm, form) => {
