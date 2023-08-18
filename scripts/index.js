@@ -50,7 +50,7 @@ const initialCards = [
 ];
 
 
-const openButtoPopupnProfile = function () {
+const openButtonPopupProfile = function () {
     openPopup(popupProfile);
     nameInput.value = profileName.textContent;
     jobInput.value = profileJob.textContent;
@@ -106,6 +106,7 @@ const createElByTemplate = (data) => {
 
         popupPhotoText.textContent = data.name;
         popupPhotoImg.src = data.link;
+        popupPhotoImg.alt = data.name;
     }
     img.addEventListener('click', openPopupPh);
     return el;
@@ -157,7 +158,7 @@ function handleFormSubmitAdd(evt) {
 
 render();
 
-popupOpenButton.addEventListener('click', openButtoPopupnProfile);
+popupOpenButton.addEventListener('click', openButtonPopupProfile);
 popupCloseButton.addEventListener('click', closeButtonPopupProfile);
 formElProf.addEventListener('submit', handleFormSubmitProfile);
 formElAdd.addEventListener('submit', handleFormSubmitAdd);
