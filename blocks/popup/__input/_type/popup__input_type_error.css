@@ -2,7 +2,6 @@
     border-bottom: 1px solid #F00;
     width: 358px;
     height: 14px;
-    padding-bottom: 13px;
     padding-left: 0;
     padding-right: 0;
     padding-top: 0;
@@ -18,9 +17,7 @@
     line-height: normal;
 }
 
-.popup__input_type_error:last-of-type {
-    margin-top: 30px;
-}
+
 
 
 

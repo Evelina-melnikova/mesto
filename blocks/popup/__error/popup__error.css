@@ -9,9 +9,11 @@
     margin-top: 5px;
     margin-left: 36px;
     margin-right: 36px;
+    margin-bottom: 13px;
     flex-wrap: wrap;
     display: flex;
 }
+
 
 
 @media screen and (min-width:320px) and (max-width:639px) {
