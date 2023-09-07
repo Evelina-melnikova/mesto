@@ -1,10 +1,10 @@
 export class FormValidator {
     constructor(form, configValidation) {
-        this._formSelector = configValidation._formSelector
-        this._inputSelector = configValidation._inputSelector
-        this._inputErrorClass = configValidation._inputErrorClass
-        this._submitButtonSelector = configValidation._submitButtonSelector
-        this._inactiveButtonClass = configValidation._inactiveButtonClass
+        this._formSelector = configValidation.formSelector
+        this._inputSelector = configValidation.inputSelector
+        this._inputErrorClass = configValidation.inputErrorClass
+        this._submitButtonSelector = configValidation.submitButtonSelector
+        this._inactiveButtonClass = configValidation.inactiveButtonClass
         this._form = form
         this._btnElement = this._form.querySelector(this._submitButtonSelector)
         this._inputList = Array.from(this._form.querySelectorAll(this._inputSelector))
@@ -28,13 +28,13 @@ export class FormValidator {
     };
 
     _showInputError = (inputElForm) => {
-        const errorEl = this._document.querySelector(`#${inputElForm.id}-error`)
+        const errorEl = this._form.querySelector(`#${inputElForm.id}-error`)
         errorEl.textContent = inputElForm.validationMessage;
         inputElForm.classList.add(this._inputErrorClass);
     }
 
     _hideInputError = (inputElForm) => {
-        const errorEl = this._document.querySelector(`#${inputElForm.id}-error`)
+        const errorEl = this._form.querySelector(`#${inputElForm.id}-error`)
         inputElForm.classList.remove(this._inputErrorClass);
         errorEl.textContent = '';
     }

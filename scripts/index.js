@@ -18,6 +18,7 @@ const formElAdd = document.querySelector('.popup__form_cards-add');
 const title = document.querySelector('.elements__element-item-text');
 const photo = document.querySelector('.elements__element-img');
 const titleInput = document.querySelector('.popup__input_type_title');
+const linkInput = document.querySelector('.popup__input_type_link')
 const photoInput = document.querySelector('.popup__input_type_link');
 export const popupPhoto = document.querySelector('.popup_photo');
 const popupCloseButtonPhoto = document.querySelector('.popup__close-button_photo');
