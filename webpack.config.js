@@ -13,7 +13,6 @@ module.exports = {
         publicPath: ''
   },
     mode: 'development',
-    devtool:'inline-sourсe-map',
   devServer: {
     static: path.resolve(__dirname, './dist'),
     compress: true,

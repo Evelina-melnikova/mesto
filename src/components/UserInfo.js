@@ -1,7 +1,7 @@
 export default class UserInfo {
     constructor(profileName, profileJob) {
-        this._profileName = document.querySelector(profileName);
-        this._profileJob = document.querySelector(profileJob);
+        this._profileName = document.querySelector(".profile__info-name");
+        this._profileJob = document.querySelector('.profile__info-popup-job');
     }
 
     getUserInfo() {

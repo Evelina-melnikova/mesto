@@ -7,7 +7,8 @@ import PopupWithImage from './components/PopupWithImage.js';
 import PopupWithForm from './components/PopupWithForm.js';
 import Section from './components/Section.js';
 import UserInfo from './components/UserInfo.js';
-const section = new Section({
+
+ const section = new Section({
     items: initialCards,
     renderer: (item) => {
         enableValidation(item, template, openPopupPh);
@@ -16,7 +17,7 @@ const section = new Section({
 
 const userInfo = new UserInfo({ nameSelector: profileName, jobSelector: profileJob });
 
-const popupInfoprofile= new PopupWithForm({
+const popupInfoprofile = new PopupWithForm({
     popupSelector: '.popup popup_type_profile-edit',
     formSubmitter: (data) => {
         userInfo.setUserInfo(data);
@@ -24,13 +25,13 @@ const popupInfoprofile= new PopupWithForm({
     }
 });
 
-const popupCardsAdd = new PopupWithForm( {
+const popupCardsAdd = new PopupWithForm({
     popupSelector: '.popup_type_cards-add',
     formSubmitter: (data) => {
-      createCard(data, template, openPopupPh);;
-      popupCardsAdd.close();
-      }
-    });
+        createCard(data, template, openPopupPh);;
+        popupCardsAdd.close();
+    }
+});
 
 const popupImg = new PopupWithImage('.popup_photo')
 
@@ -51,10 +52,10 @@ const enableValidation = (configValidation) => {
     formList.forEach((formElement) => {
         createValidatorForms(configValidation, formElement);
     });
-  };
-  enableValidation(configValidation);
+};
+enableValidation(configValidation);
 
-  function openPopupPh(name, link) {
+function openPopupPh(name, link) {
     popupImg.open(name, link);
 }
 
@@ -92,12 +93,12 @@ popupOpenEditButton.addEventListener('click', function () {
     jobInput.value = job;
     formValidators['profile'].resetValidation();
     popupOpenEditButton.open();
-  });
-  
-  popupOpenAddButton.addEventListener('click', function () {
+});
+
+popupOpenAddButton.addEventListener('click', function () {
     popupOpenAddButton.open();
     formValidators['add'].resetValidation();
-  });
+});
 
 
 formElProf.addEventListener('submit', handleFormSubmitProfile);
