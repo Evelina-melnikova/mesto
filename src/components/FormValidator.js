@@ -1,3 +1,4 @@
+
 export class FormValidator {
     constructor(form, configValidation) {
         this._formSelector = configValidation.formSelector
@@ -56,8 +57,7 @@ export class FormValidator {
         });
     };
 
-    enableValidation () {
+    launchValidation() {
         this._setEventListeners()
         };
 };
- 

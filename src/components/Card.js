@@ -3,6 +3,7 @@ export default class Card {
     constructor(data, template) {
         this._name = data.name;
         this._link = data.link;
+        this._alt = this._name;
         this._template = template;
     }
 
@@ -15,30 +16,22 @@ export default class Card {
 
         return cardEl;
     };
-    generateCard() {
-        this._elementText = this._template.querySelector('.popup__photo-text');
-        this._elementText.textContent = this._name;
-        this._cardImg = this._template.querySelector('.elements__element-img');
-        this._cardImg.src = this._link;
-        this._cardImg.alt = this._link;
-        this._setEventListeners();
-
-        return this._template;
-    };
 
     _setEventListeners() {
-        this._cardImg.addEventListener('click', () => {
-            this.openPopupPh();
+        const cardImg = this._template.querySelector('.elements__element-img');
+        cardImg.addEventListener('click', () => {
+            this._openPopupPh();
         });
 
-        this._deleteElBtn.addEventListener('click', () => {
+        const deleteElBtn = this._template.querySelector('.elements__element-delete');
+        deleteElBtn.addEventListener('click', () => {
             this._deleteEl();
         });
 
-        this._likeBtn.addEventListener('click', () => {
+        const likeBtn = this._template.querySelector('.elements__element-item-group');
+        likeBtn.addEventListener('click', () => {
             this._likeEl();
         });
-
     };
 
     _deleteEl() {
@@ -48,5 +41,15 @@ export default class Card {
     _likeEl() {
         const likeElBtn = this._template.querySelector('.elements__element-item-group');
         likeElBtn.classList.toggle('elements__element-like-active');
-        };
+    };
+
+    generateCard() {
+        this._element = this._getTemplate();
+        this._element.querySelector('.elements__element-item-text').textContent = this._name;
+        this._element.querySelector('.elements__element-img').src = this._link;
+        this._element.querySelector('.elements__element-img').alt = this._link;
+        this._setEventListeners();
+
+        return this._element;
+    };
 };
