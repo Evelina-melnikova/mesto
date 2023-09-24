@@ -40,20 +40,9 @@ const createCard = (item) => {
     return section.addItem(card.generateCard());
 }
 
-const createValidatorForms = (configValidation, formElement) => {
-    const validator = new FormValidator(configValidation, formElement);
-    const nameForm = formElement.getAttribute('name');
-    formValidators[nameForm] = validator;
-    validator.enableValidation();
-}
 
-const enableValidation = (configValidation) => {
-    const formList = Array.from(document.querySelectorAll(configValidation.formSelector))
-    formList.forEach((formElement) => {
-        createValidatorForms(configValidation, formElement);
-    });
-};
-enableValidation(configValidation);
+
+
 
 function openPopupPh(name, link) {
     popupImg.open(name, link);
@@ -100,6 +89,11 @@ popupOpenAddButton.addEventListener('click', function () {
     formValidators['add'].resetValidation();
 });
 
+const validatorformElProf = new FormValidator(formElProf, configValidation);
+validatorformElProf.enableValidation();
+
+const validatorformElAdd = new FormValidator(formElAdd, configValidation);
+validatorformElAdd.enableValidation();
 
 formElProf.addEventListener('submit', handleFormSubmitProfile);
 formElAdd.addEventListener('submit', handleFormSubmitAdd);

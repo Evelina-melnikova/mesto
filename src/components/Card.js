@@ -18,7 +18,7 @@ export default class Card {
     };
 
     _setEventListeners() {
-        const cardImg = this._template.querySelector('.elements__element-img');
+        const cardImg = this._template.querySelector(".elements__element-img");
         cardImg.addEventListener('click', () => {
             this._openPopupPh();
         });
@@ -44,12 +44,12 @@ export default class Card {
     };
 
     generateCard() {
-        this._element = this._getTemplate();
-        this._element.querySelector('.elements__element-item-text').textContent = this._name;
-        this._element.querySelector('.elements__element-img').src = this._link;
-        this._element.querySelector('.elements__element-img').alt = this._link;
+        this._template = this._getTemplate();
+        this._template.querySelector('.elements__element-item-text').textContent = this._name;
+        this._template.querySelector('.elements__element-img').src = this._link;
+        this._template.querySelector('.elements__element-img').alt = this._link;
         this._setEventListeners();
 
-        return this._element;
+        return this._template;
     };
 };

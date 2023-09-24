@@ -27,6 +27,7 @@ export const popup = document.querySelector('.popup');
 export const formElement = document.querySelector('.popup__form');
 
 
+
 export const configValidation = {
     formSelector: '.popup__form',
     inputSelector: '.popup__input',
