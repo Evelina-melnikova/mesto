@@ -48,28 +48,6 @@ const popupCardsAdd = new PopupWithForm({
 
 
 
-function handleFormSubmitProfile(evt) {
-    evt.preventDefault();
-    const profileNameValue = nameInput.value;
-    const profileJobValue = jobInput.value;
-    profileName.textContent = profileNameValue;
-    profileJob.textContent = profileJobValue;
-    closeButtonPopupProfile();
-};
-
-function handleFormSubmitAdd(evt) {
-    evt.preventDefault();
-    const cardsInfo = {
-        name: titleInput.value,
-        link: linkInput.value
-    }
-
-    createCard(cardsInfo, '.templateEl');
-    document.querySelector('.elements').prepend(createCard(cardsInfo));
-    formElAdd.reset();
-    validatorformElAdd.setSubmitButtonState();
-    closeBtnPopupAdd();
-};
 
 initialCards.forEach((item) => {
     createCard(item, '.templateEl')
@@ -92,8 +70,7 @@ validatorformElProf.enableValidation();
 const validatorformElAdd = new FormValidator(formElAdd);
 validatorformElAdd.enableValidation();
 
-formElProf.addEventListener('submit', handleFormSubmitProfile);
-formElAdd.addEventListener('submit', handleFormSubmitAdd);
+
 
 
 

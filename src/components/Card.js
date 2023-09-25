@@ -1,5 +1,4 @@
-import { popup} from '../utils/constants.js'
-import {popupImage} from '../index.js'
+
 export default class Card {
     constructor(data, template, handleOpenPopup) {
         this._name = data.name;
