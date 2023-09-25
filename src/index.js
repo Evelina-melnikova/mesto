@@ -11,9 +11,9 @@ import UserInfo from './components/UserInfo.js';
  const section = new Section({
     items: initialCards,
     renderer: (item) => {
-        enableValidation(item, template, openPopupPh);
+        enableValidation(item, template, openPopupCard);
     }
-}, '.elements__element-card');
+}, '.elements');
 
 const userInfo = new UserInfo({ nameSelector: profileName, jobSelector: profileJob });
 
@@ -28,25 +28,25 @@ const popupInfoprofile = new PopupWithForm({
 const popupCardsAdd = new PopupWithForm({
     popupSelector: '.popup_type_cards-add',
     formSubmitter: (data) => {
-        createCard(data, template, openPopupPh);;
+        createCard(data, template, openPopupCard);;
         popupCardsAdd.close();
     }
 });
+const popupImage = new PopupWithImage('.popup_photo')
 
-const popupImg = new PopupWithImage('.popup_photo')
+function openPopupCard (name, link) {
+    popupImage.open(name, link);
+  }
 
 const createCard = (item) => {
     const card = new Card(item, '.templateEl');
-    return section.addItem(card.generateCard());
+    return card.generateCard();
 }
 
 
 
 
 
-function openPopupPh(name, link) {
-    popupImg.open(name, link);
-}
 
 function handleFormSubmitProfile(evt) {
     evt.preventDefault();
