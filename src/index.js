@@ -32,7 +32,8 @@ const popupCardsAdd = new PopupWithForm({
         popupCardsAdd.close();
     }
 });
- export const popupImage = new PopupWithImage('.popup_photo')
+
+const popupImage = new PopupWithImage('.popup_photo')
 
   function handleOpenPopup(link, name) {
     popupImage.open(link, name);
@@ -43,12 +44,6 @@ const popupCardsAdd = new PopupWithForm({
     return card.generateCard();
 }
 
-
-
-
-
-
-
 initialCards.forEach((item) => {
     createCard(item, '.templateEl')
     document.querySelector('.elements').append(createCard(item));
@@ -56,14 +51,16 @@ initialCards.forEach((item) => {
 
 formElProf.addEventListener('click', () => {
     validatorformElProf.resetValidation();
-    popupCardsAdd.setInputsValues(userInfo.getUserInfo())
-    popupCardsAdd.open();
+    popupInfoprofile.setInputsValues(userInfo.getUserInfo())
+    popupInfoprofile.open();
 });
 
-formElAdd.addEventListener('click', () => {
+popupOpenAddButton.addEventListener('click', () => {
     validatorformElAdd.resetValidation();
-    popupImage.open();
+    popupCardsAdd.open();
 });
+ 
+
 const validatorformElProf = new FormValidator(formElProf);
 validatorformElProf.enableValidation();
 

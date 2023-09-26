@@ -16,6 +16,7 @@ export const initialCards = [
     },
     {
         name: 'Дубна',
+
         link: dubnaImage
     },
     {
@@ -31,3 +32,8 @@ export const initialCards = [
         link: kamchatkaImage
     }
 ];
+
+export const configInfo = {
+    profileNameSelector: '.popup__input_type_name',
+    profileJobSelector: '.popup__input_type_job'
+}

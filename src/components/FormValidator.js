@@ -9,12 +9,11 @@ export class FormValidator {
         this._btnElement = document.querySelector(configValidation.submitButtonSelector)
         this._inputs = Array.from(document.querySelectorAll(configValidation.inputSelector))
     };
-    setSubmitButtonState() {
-        if (this._formSelector.checkValidity()) {
-            this._btnElement.classList.remove(this._inactiveButtonClass)
+
+    setSubmitButtonState(isActive) {
+        if (isActive) {
             this._btnElement.removeAttribute('disabled');
         } else {
-            this._btnElement.classList.add(this._inactiveButtonClass)
             this._btnElement.setAttribute('disabled', true);
         }
     };
@@ -55,7 +54,14 @@ export class FormValidator {
         });
     };
 
-    enableValidation () {
+    resetValidation() {
+        this.setButtonState(false);
+        this._inputs.forEach((input) => {
+            this._hideInputError(input);
+        });
+    };
+
+    enableValidation() {
         this._setEventListeners()
-        };
+    };
 };
