@@ -68,6 +68,9 @@ export class FormValidator {
                 }
             });
         });
+        this.inputElForm.addEventListener('submit', (evt) => {
+            evt.target.reset();
+        })
     };
 
     enableValidation() {

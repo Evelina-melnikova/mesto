@@ -2,7 +2,7 @@ import '../src/pages/index.css';
 import { FormValidator } from './components/FormValidator.js'
 import Card from './components/Card.js'
 import { initialCards } from "./components/initialCards.js";
-import { configValidation, template, profileName, profileJob, formElProf, formElAdd, popupOpenEditButton, popupOpenAddButton } from "./utils/constants.js"
+import { configValidation, template, formElProf, formElAdd, popupOpenEditButton, popupOpenAddButton } from "./utils/constants.js"
 import PopupWithImage from './components/PopupWithImage.js';
 import PopupWithForm from './components/PopupWithForm.js';
 import Section from './components/Section.js';
