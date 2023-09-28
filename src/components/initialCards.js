@@ -33,7 +33,3 @@ export const initialCards = [
     }
 ];
 
-export const configInfo = {
-    profileNameSelector: '.popup__input_type_name',
-    profileJobSelector: '.popup__input_type_job'
-}

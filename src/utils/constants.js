@@ -25,6 +25,8 @@ export const popupPhotoImg = document.querySelector('.popup__open-img');
 export const input = document.querySelector('.popup__input');
 export const popup = document.querySelector('.popup');
 export const formElement = document.querySelector('.popup__form');
+export const elements = '.elements';
+
 
 
 
