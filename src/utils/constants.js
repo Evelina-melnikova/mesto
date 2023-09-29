@@ -26,6 +26,7 @@ export const popup = document.querySelector('.popup');
 export const formElement = document.querySelector('.popup__form');
 export const elements = document.querySelector('.elements');
 
+
 export const configInfo = {
     profileNameSelector: '.profile__info-name',
     profileJobSelector: '.profile__info-popup-job'
