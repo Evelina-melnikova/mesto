@@ -1,12 +1,12 @@
-import './index.css';
-import { FormValidator } from '../components/FormValidator.js'
-import Card from '../components/Card.js'
-import { initialCards } from "../components/initialCards.js";
-import { configValidation, configInfo, template, nameInput, jobInput, formElProf, formElAdd, popupOpenEditButton, popupOpenAddButton } from "../utils/constants.js"
-import PopupWithImage from '../components/PopupWithImage.js';
-import PopupWithForm from '../components/PopupWithForm.js';
-import Section from '../components/Section.js';
-import UserInfo from '../components/UserInfo.js';
+import '../src/pages/index.css';
+import { FormValidator } from './components/FormValidator.js'
+import Card from './components/Card.js'
+import { initialCards } from "./components/initialCards.js";
+import { configValidation, configInfo, template, nameInput, jobInput, formElProf, formElAdd, popupOpenEditButton, popupOpenAddButton } from "./utils/constants.js"
+import PopupWithImage from './components/PopupWithImage.js';
+import PopupWithForm from './components/PopupWithForm.js';
+import Section from './components/Section.js';
+import UserInfo from './components/UserInfo.js';
 
 const section = new Section({
     items: initialCards,
@@ -42,7 +42,6 @@ const popupCardsAdd = new PopupWithForm({
         createCard(item);
         validatorformElAdd.submitButtonDisabled();
         popupCardsAdd.close();
-        console.log(item)
     }
 });
 popupCardsAdd.setEventListeners();
