@@ -1,16 +1,16 @@
 export default class Section {
   constructor({ items, renderer }, formSelector) {
-    this._initialCards = items;
+    this._items = items;
     this._renderer = renderer;
     this._formSelector = document.querySelector(formSelector);
   };
 
-  setItem(element) {
-    this._formSelector.append(element);
+  setItem(item) {
+    this._formSelector.prepend(item);
   };
 
   renderItems() {
-    this._initialCards.forEach((item) => {
+    this._items.forEach((item) => {
       this._renderer(item);
     });
   }

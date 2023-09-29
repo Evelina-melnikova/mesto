@@ -17,7 +17,6 @@ export const title = document.querySelector('.elements__element-item-text');
 export const photo = document.querySelector('.elements__element-img');
 export const titleInput = document.querySelector('.popup__input_type_title');
 export const linkInput = document.querySelector('.popup__input_type_link')
-export const photoInput = document.querySelector('.popup__input_type_link');
 export const popupPhoto = document.querySelector('.popup_photo');
 export const popupCloseButtonPhoto = document.querySelector('.popup__close-button_photo');
 export const popupPhotoText = document.querySelector('.popup__photo-text');
@@ -25,9 +24,12 @@ export const popupPhotoImg = document.querySelector('.popup__open-img');
 export const input = document.querySelector('.popup__input');
 export const popup = document.querySelector('.popup');
 export const formElement = document.querySelector('.popup__form');
-export const elements = '.elements';
+export const elements = document.querySelector('.elements');
 
-
+export const configInfo = {
+    profileNameSelector: '.profile__info-name',
+    profileJobSelector: '.profile__info-popup-job'
+}
 
 
 export const configValidation = {
