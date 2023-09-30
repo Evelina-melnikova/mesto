@@ -1,4 +1,3 @@
-// postcss.config.js
 
 // подключите плагины в файл
 const autoprefixer = require('autoprefixer');
