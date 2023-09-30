@@ -29,8 +29,7 @@ export default class Card {
     };
 
     _setEventListeners() {
-        const cardImg = this._cardEl.querySelector(".elements__element-img");
-        cardImg.addEventListener('click', () => {
+        this._cardImg.addEventListener('click', () => {
             this.handleOpenPopup( this._name, this._link);;
         });
 
