@@ -9,9 +9,9 @@ export default class Section {
     this._formSelector.prepend(item);
   };
 
-  renderItems() {
-    this._items.forEach((item) => {
-      this._renderer(item);
-    });
-  }
+  // renderItems() {
+  //   this._items.forEach((item) => {
+  //     this._renderer(item);
+  //   });
+  // }
 }

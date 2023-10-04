@@ -5,31 +5,31 @@ import moscowImage from '../images/moscow.jpg';
 import sochiImage from '../images/Sochi.jpg';
 import kamchatkaImage from '../images/kamchatka.png';
 
-export const initialCards = [
-    {
-        name: 'Нижний Новгород',
-        link: novgorodImage
-    },
-    {
-        name: 'Зеленоградск',
-        link: zelenogradskImage
-    },
-    {
-        name: 'Дубна',
+// export const initialCards = [
+//     {
+//         name: 'Нижний Новгород',
+//         link: novgorodImage
+//     },
+//     {
+//         name: 'Зеленоградск',
+//         link: zelenogradskImage
+//     },
+//     {
+//         name: 'Дубна',
 
-        link: dubnaImage
-    },
-    {
-        name: 'Москва',
-        link: moscowImage
-    },
-    {
-        name: 'Сочи',
-        link: sochiImage
-    },
-    {
-        name: 'Камчатка',
-        link: kamchatkaImage
-    }
-];
+//         link: dubnaImage
+//     },
+//     {
+//         name: 'Москва',
+//         link: moscowImage
+//     },
+//     {
+//         name: 'Сочи',
+//         link: sochiImage
+//     },
+//     {
+//         name: 'Камчатка',
+//         link: kamchatkaImage
+//     }
+// ];
 

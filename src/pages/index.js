@@ -1,7 +1,7 @@
 import './index.css';
 import { FormValidator } from '../components/FormValidator.js'
 import Card from '../components/Card.js'
-import { initialCards } from "../utils/initialCards.js";
+// import { initialCards } from "../utils/initialCards.js";
 import {
     configValidation, configInfo, template,
     nameInput, jobInput, formElProf, formElAdd,
@@ -11,14 +11,18 @@ import PopupWithImage from '../components/PopupWithImage.js';
 import PopupWithForm from '../components/PopupWithForm.js';
 import Section from '../components/Section.js';
 import UserInfo from '../components/UserInfo.js';
+import Api from './API';
+import {apiConfig} from '../utils/constants.js';
 
+
+
+const api = new Api(apiConfig)
 
 const userInfo = new UserInfo(configInfo);
 
 const popupImage = new PopupWithImage('.popup_photo')
 
 const section = new Section({
-    items: initialCards,
     renderer: (item) => {
         createCard(item, template, handleOpenPopup);
     }
@@ -64,7 +68,11 @@ validatorformElProf.enableValidation();
 const validatorformElAdd = new FormValidator(configValidation, formElAdd);
 validatorformElAdd.enableValidation();
 
-section.renderItems();
+api.getAllCards()
+.then((item) => {
+    console.log(item)
+})
+// section.renderItems();
 popupOpenEditButton.addEventListener('click', openPopupProfile);
 popupInfoProfile.setEventListeners();
 popupCardsAdd.setEventListeners();
