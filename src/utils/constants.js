@@ -25,11 +25,15 @@ export const input = document.querySelector('.popup__input');
 export const popup = document.querySelector('.popup');
 export const formElement = document.querySelector('.popup__form');
 export const elements = document.querySelector('.elements');
+export const formElavatar = document.querySelector('.popup__form_update-avatar');
+export const avatarImage = document.querySelector('.profile__avatar');
+
 
 
 export const configInfo = {
     profileNameSelector: '.profile__info-name',
-    profileJobSelector: '.profile__info-popup-job'
+    profileJobSelector: '.profile__info-popup-job',
+    avatarSelector: '.popup_update-avatar'
 }
 
 
@@ -38,7 +42,7 @@ export const configValidation = {
     inputSelector: '.popup__input',
     submitButtonSelector: '.popup__save-button',
     inactiveButtonClass: 'popup__save-button-invalid',
-    inputErrorClass: 'popup__input_type_error',
+    inputErrorClass: 'popup__input_type_error'
 };
 
 export const apiConfig = {

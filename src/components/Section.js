@@ -1,6 +1,5 @@
 export default class Section {
-  constructor({ items, renderer }, formSelector) {
-    this._items = items;
+  constructor({ renderer }, formSelector) {
     this._renderer = renderer;
     this._formSelector = document.querySelector(formSelector);
   };
@@ -9,9 +8,10 @@ export default class Section {
     this._formSelector.prepend(item);
   };
 
-  // renderItems() {
-  //   this._items.forEach((item) => {
-  //     this._renderer(item);
-  //   });
-  // }
+  renderItems(items) {
+    items.forEach((item) => {
+      this._renderer(item);
+    });
+  }
 }
+

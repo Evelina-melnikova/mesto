@@ -5,13 +5,13 @@ export class FormValidator {
         this._inputErrorClass = configValidation.inputErrorClass
         this._submitButtonSelector = configValidation.submitButtonSelector
         this._inactiveButtonClass = configValidation.inactiveButtonClass
-        this._formElement = formElement
-        this._btnElement = this._formElement.querySelector(this._submitButtonSelector)
-        this._inputList = Array.from(this._formElement.querySelectorAll(this._inputSelector))
+        this._form = formElement
+        this._btnElement = this._form.querySelector(this._submitButtonSelector)
+        this._inputList = Array.from(this._form.querySelectorAll(this._inputSelector))
     };
 
     setSubmitButtonState() {
-        if (this._formElement.checkValidity()) {
+        if (this._form.checkValidity()) {
             this._btnElement.classList.remove(this._inactiveButtonClass)
             this._btnElement.removeAttribute('disabled');
         } else {
@@ -38,13 +38,13 @@ export class FormValidator {
         });
     };
     _showInputError = (input) => {
-        const errorEl = this._formElement.querySelector(`#${input.id}-error`)
+        const errorEl = this._form.querySelector(`#${input.id}-error`)
         errorEl.textContent = input.validationMessage;
         input.classList.add(this._inputErrorClass);
     };
 
     _hideInputError = (input) => {
-        const errorEl = this._formElement.querySelector(`#${input.id}-error`)
+        const errorEl = this._form.querySelector(`#${input.id}-error`)
         errorEl.textContent = '';
         input.classList.remove(this._inputErrorClass);
     };
@@ -61,7 +61,7 @@ export class FormValidator {
         this._inputList.forEach((input) => {
             input.addEventListener('input', () => {
                 this._checkInputValidity(input);
-                if (this._formElement.checkValidity()) {
+                if (this._form.checkValidity()) {
                     this.setSubmitButtonState(true);
                 } else {
                     this.setSubmitButtonState(false);
