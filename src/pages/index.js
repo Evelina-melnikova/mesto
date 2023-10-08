@@ -25,23 +25,18 @@ const userInfo = new UserInfo(configInfo);
 const popupImage = new PopupWithImage('.popup_photo')
 
 const section = new Section({
-    renderer: (item) => {
-        createCard(item, template, handleOpenPopup);
+    renderer: (data) => {
+        createCard(data, template, handleOpenPopup);
+
     }
 }, '.elements');
 
-// const openPopupProfile = function () {
-//     popupInfoProfile.open();
-//     const userInf = userInfo.getUserInfo();
-//     nameInput.value = userInf.name;
-//     jobInput.value = userInf.about;
-// }
 
 const popupInfoProfile = new PopupWithForm({
     popupSelector: '.popup_type_profile-edit',
     formSubmitter: (item) => {
-        popupInfoProfile.close();
         popupInfoProfile.setLoader();
+        console.log(item) 
         api.setUserInfo(item)
             .then((item) => {
                 userInfo.setUserInfo(item);
@@ -56,12 +51,15 @@ const popupInfoProfile = new PopupWithForm({
     }
 });
 
+
 const popupCardsAdd = new PopupWithForm({
     popupSelector: '.popup_type_cards-add',
     formSubmitter: (data) => {
-        validatorFormElAdd.submitButtonDisabled();
+        console.log(data)
+
         popupCardsAdd.setLoader();
         api.createCard(data)
+
             .then((data) => {
                 createCard(data, template, handleOpenPopup);
                 popupCardsAdd.close();
@@ -79,6 +77,7 @@ const popupAvatar = new PopupWithForm({
     popupSelector: '.popup_update-avatar',
     formSubmitter: (item) => {
         popupAvatar.setLoader();
+        // console.log(item)
         api.getNewAvatar(item)
             .then((item) => {
                 userInfo.setUserInfo(item);
@@ -96,52 +95,55 @@ const popupAvatar = new PopupWithForm({
 // const popupDeleteCards = new PopupDeleteCards({
 //     popupSelector: '.popup_approval',
 //     formSubmitter: (item) => {
-//         api.deleteCard(item._id)
-//             .then(() => {
-//                 item.deleteCard();
-//                 popupDeleteCards.close();
-//             })
-
-//             .catch(err => console.log(`Статус ошибки: ${err}`))
+//       api.cardDeleteApi(item._id)
+//       .then(() => {
+//         popupDeleteCards.close();
+//         item._deleteEl();
+//       })
 //     }
-// });
+//   }
+// );
 
 
-const createCard = (item) => {
-    const card = new Card(item, template, handleOpenPopup)
-        // {
-        //     deleteCard: () => {
-        //         popupDeleteCards.submitDeleteCard(card);
-        //         validatorFormAvatar.setSubmitButtonState(true);
-        //     }
-        // },
-        // {
-        //     setLike: (id, likeCounter) => {
-        //         api.addLike(id)
 
-        //             .then((data) => {
-        //                 card._likeEl();
-        //                 likeCounter.textContent = data.likes.length;
-        //             })
 
-        //             .catch((err) => {
-        //                 console.log(err);
-        //             })
-        //     }
-        // },
-        // {
-        //     deleteLike: (id, likeCounter) => {
-        //         api.removeLike(id).then((data) => {
-        //             card.removeLike();
-        //             likeCounter.textContent = data.likes.length;
-        //         })
-        //             .catch((err) => {
-        //                 console.log(err);
-        //             })
-        //     }
-        // },
-        // userInfo.userId
-    
+// const newCard = createCard(data)
+
+const createCard = (data, template, handleOpenPopup) => {
+    const card = new Card(data, template, handleOpenPopup)
+    // {
+    //     deleteCard: () => {
+    //         popupDeleteCards.submitDeleteCard(card);
+    //         validatorFormAvatar.setSubmitButtonState(true);
+    //     }
+    // },
+    // {
+    //     setLike: (id, likeCounter) => {
+    //         api.addLike(id)
+
+    //             .then((data) => {
+    //                 card._likeEl();
+    //                 likeCounter.textContent = data.likes.length;
+    //             })
+
+    //             .catch((err) => {
+    //                 console.log(err);
+    //             })
+    //     }
+    // },
+    // {
+    //     deleteLike: (id, likeCounter) => {
+    //         api.removeLike(id).then((data) => {
+    //             card.removeLike();
+    //             likeCounter.textContent = data.likes.length;
+    //         })
+    //             .catch((err) => {
+    //                 console.log(err);
+    //             })
+    //     }
+    // },
+    userInfo.userId
+
     // card.handleDelete();
     return section.setItem(card.generateCard());
 }
@@ -159,21 +161,12 @@ validatorFormElAdd.enableValidation();
 const validatorFormAvatar = new FormValidator(configValidation, formElavatar);
 validatorFormAvatar.enableValidation()
 
-
-
-
-
-// popupOpenEditButton.addEventListener('click', openPopupProfile);
-popupInfoProfile.setEventListeners();
-popupCardsAdd.setEventListeners();
-popupImage.setEventListeners()
-popupAvatar.setEventListeners();
-
 popupOpenEditButton.addEventListener('click', () => {
     validatorFormElProf.resetValidation();
-    popupInfoProfile._getInputsValues(userInfo.getUserInfo())
     popupInfoProfile.open();
-
+    const userInf = userInfo.getUserInfo();
+    nameInput.value = userInf.name;
+    jobInput.value = userInf.about;
 });
 
 popupOpenAddButton.addEventListener('click', () => {
@@ -187,28 +180,21 @@ avatarImage.addEventListener('click', function () {
 
 });
 
-
+// popupDeleteCards.setEventListeners()
+popupInfoProfile.setEventListeners();
+popupCardsAdd.setEventListeners();
+popupImage.setEventListeners()
+popupAvatar.setEventListeners();
 
 Promise.all([api.getAllCards(), api.getUserInfo()])
     .then(([items, item]) => {
-        section.renderItems(items);
         userInfo.setUserInfo(item);
+        section.renderItems(items);
     })
-    // .then((items) => {
-    //     items.forEach((item) => {
-    //         createCard(item);
-    //     })
-    // })
-
     .catch((err) => {
         console.log(err);
     });
 
 
 
-api.getAllCards()
-    .then((item) => {
-        item.forEach((item) => {
-            createCard(item);
-        })
-    })
+

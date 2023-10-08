@@ -1,6 +1,6 @@
 
 export default class Card {
-    constructor(data, template, handleOpenPopup) {
+    constructor(data, template, handleOpenPopup, userId) {
         this._name = data.name;
         this._link = data.link;
         this._alt = this._name;
@@ -9,9 +9,9 @@ export default class Card {
         this._likes = data.likes;
         this._id = data._id;
         this._owner = data.owner;
-        // this._userId = userId;
+        this.userId = userId;
         this._likeBtn = this._template.querySelector('.elements__element-item-group');
-        this._likeCounter = this._template.querySelector('.elements__element-like-counter');
+        // this._likeCounter = this._template.querySelector('.elements__element-like-counter');
         this._deleteBtn = this._template.querySelector('.elements__element-delete');
     }
 
@@ -24,8 +24,8 @@ export default class Card {
         return this._cardEl;
     };
 
-    handleDelete() {
-        if (this._owner._id !== this._userId) {
+    handleDeleteCheck() {
+        if (this._owner._id !== this.userId) {
           this._deleteBtn.remove();
         }
       }
@@ -36,7 +36,10 @@ export default class Card {
         this._cardImg = this._cardEl.querySelector('.elements__element-img')
         this._cardImg.src = this._link;
         this._cardImg.alt = this._link;
+        // console.log(this._name, this._link)
+        // this._cardEl.querySelector('.elements__element-like-counter').textContent = data.likes.length;
         this._setEventListeners();
+        // this._checkLike();
 
         return this._cardEl;
 
@@ -44,7 +47,7 @@ export default class Card {
 
     _setEventListeners() {
         this._cardImg.addEventListener('click', () => {
-            this.handleOpenPopup(this._name, this._link);;
+            this.handleOpenPopup(this._name, this._link);
         });
 
         const deleteElBtn = this._cardEl.querySelector(".elements__element-delete");
@@ -64,9 +67,19 @@ export default class Card {
 
     _likeEl() {
         const likeElBtn = this._cardEl.querySelector('.elements__element-item-group');
-        likeElBtn.classList.toggle('elements__element-like-active');
+        likeElBtn.classList.add('elements__element-like-active');
     };
-
+    removeLike() {
+        this._likeBtn.classList.remove('elements__element-like-active');
+      }
+    
+    //   _checkLike() {
+    //     this._likes.forEach(like => {
+    //       if (like._id === this.userId) {
+    //         this.likeElBtn.classList.add('elements__element-like-active');
+    //       }
+    //     })
+    //   }
 
 
 };
