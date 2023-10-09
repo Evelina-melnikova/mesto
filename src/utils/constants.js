@@ -25,15 +25,17 @@ export const input = document.querySelector('.popup__input');
 export const popup = document.querySelector('.popup');
 export const formElement = document.querySelector('.popup__form');
 export const elements = document.querySelector('.elements');
-export const formElavatar = document.querySelector('.popup__form_update-avatar');
+export const formElAvatar = document.querySelector('.popup__form_update-avatar');
 export const avatarImage = document.querySelector('.profile__avatar');
+export const formElDelete = document.querySelector('.popup_approval');
+export const popupOpenDelete = document.querySelector('.elements__element-delete');
 
 
 
 export const configInfo = {
     profileNameSelector: '.profile__info-name',
     profileJobSelector: '.profile__info-popup-job',
-    avatarSelector: '.popup_update-avatar'
+    avatarSelector: '.profile__avatar'
 }
 
 

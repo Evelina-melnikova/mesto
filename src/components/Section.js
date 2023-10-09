@@ -13,6 +13,5 @@ export default class Section {
       this.renderer(item);
     });
   }
-
 }
 
