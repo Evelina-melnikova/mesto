@@ -4,7 +4,6 @@ import {
     configValidation, configInfo, template,
     nameInput, jobInput, formElProf, formElAdd,
     popupOpenEditButton, popupOpenAddButton, avatarImage, formElAvatar,
-    formElDelete, popupOpenDelete
 } from "../utils/constants.js"
 import PopupWithImage from '../components/PopupWithImage.js';
 import PopupWithForm from '../components/PopupWithForm.js';
@@ -13,7 +12,7 @@ import UserInfo from '../components/UserInfo.js';
 import PopupDeleteCards from '../components/PopupDeleteCards.js';
 import { FormValidator } from '../components/FormValidator.js';
 import Card from '../components/Card.js';
-import Api from './Api.js';
+import Api from '../components/Api.js';
 
 
 
@@ -35,8 +34,11 @@ const createCard = (item) => {
             setLike: () => {
                 api.setlikeApi(card._id)
                     .then((data) => {
-                        card._likeEl();
+                        card.likeEl();
                         card.likeCounter(data)
+                    })
+                    .catch((err) => {
+                        console.log(err)
                     })
             }
         },
@@ -44,15 +46,18 @@ const createCard = (item) => {
             deleteLike: () => {
                 api.removeLikeApi(card._id)
                     .then((data) => {
-                        card._removeLike();
+                        card.removeLike();
                         card.likeCounter(data)
+                    })
+                    .catch((err) => {
+                        console.log(err)
                     })
             }
         },
         userInfo.userId
     )
-    card._getTemplate();
-    return section.setItem(card.generateCard());
+    const cardElement = card.generateCard();
+    section.setItem(cardElement);
 }
 
 const section = new Section({
@@ -127,7 +132,10 @@ const popupDeleteCards = new PopupDeleteCards({
 
             .then(() => {
                 popupDeleteCards.close();
-                data._deleteEl();
+                data.deleteEl();
+            })
+            .catch((err) => {
+                console.log(err)
             })
     }
 }

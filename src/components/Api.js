@@ -13,9 +13,6 @@ export default class Api {
 
                 throw new Error('Что-то пошло не так')
             })
-            .catch((err) => {
-                console.log(err)
-            })
     }
 
     getAllCards() {

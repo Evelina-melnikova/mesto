@@ -16,7 +16,7 @@ export default class Card {
         this.userId = userId;
     }
 
-    _getTemplate() {
+    getTemplate() {
         this._cardEl = this._template
             .content
             .querySelector('.elements__element-card')
@@ -31,11 +31,11 @@ export default class Card {
     };
 
     generateCard() {
-        this._cardEl = this._getTemplate();
+        this._cardEl = this.getTemplate();
         this._cardEl.querySelector('.elements__element-item-text').textContent = this._name;
         this._cardImg = this._cardEl.querySelector('.elements__element-img')
         this._cardImg.src = this._link;
-        this._cardImg.alt = this._link;
+        this._cardImg.alt = `Изображение: ${this._name}`;
         this._counter = this._cardEl.querySelector('.elements__element-like-counter');
         this.likeCounter(this._data);
 
@@ -70,16 +70,16 @@ export default class Card {
 
     }
 
-    _deleteEl() {
+    deleteEl() {
         this._cardEl.remove();
     };
 
-    _likeEl() {
+    likeEl() {
         const likeBtn = this._cardEl.querySelector('.elements__element-item-group');
         likeBtn.classList.add('elements__element-like-active');
     };
 
-    _removeLike() {
+    removeLike() {
         const likeBtn = this._cardEl.querySelector('.elements__element-item-group');
         likeBtn.classList.remove('elements__element-like-active');
     }

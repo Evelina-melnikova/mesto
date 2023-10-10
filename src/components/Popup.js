@@ -20,16 +20,8 @@ export default class Popup {
         }
     };
 
-    _closePopupOverlay() {
-        this._popup.addEventListener('click', (evt) => {
-            if (evt.currentTarget === evt.target) {
-                this.close();
-            };
-        });
-    }
-
     setEventListeners() {
-        this._popup.addEventListener('click', (evt) => {
+        this._popup.addEventListener('mousedown', (evt) => {
             if (evt.target.classList.contains('popup') || evt.target.classList.contains('popup__close-button')) {
                 this.close();
             };
