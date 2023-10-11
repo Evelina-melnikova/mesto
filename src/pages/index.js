@@ -56,11 +56,13 @@ const createCard = (item) => {
         },
         userInfo.userId
     )
-    const cardElement = card.generateCard();
-    section.setItem(cardElement);
-}
+    renderCard(card) 
 
-const section = new Section({
+}
+function renderCard (card) {
+     return cardsContainer.setItem(card.generateCard())
+    }
+const cardsContainer = new Section({
     renderer: (data) => {
         createCard(data, template, handleOpenPopup);
 
@@ -184,7 +186,7 @@ popupAvatar.setEventListeners();
 Promise.all([api.getAllCards(), api.getUserInfo()])
     .then(([items, item]) => {
         userInfo.setUserInfo(item);
-        section.renderItems(items);
+        cardsContainer.renderItems(items);
     })
     .catch((err) => {
         console.log(err);
