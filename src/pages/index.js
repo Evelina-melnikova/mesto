@@ -56,16 +56,20 @@ const createCard = (item) => {
         },
         userInfo.userId
     )
-    renderCard(card) 
+
+    return card.generateCard()
 
 }
-function renderCard (card) {
-     return cardsContainer.setItem(card.generateCard())
-    }
-const cardsContainer = new Section({
-    renderer: (data) => {
-        createCard(data, template, handleOpenPopup);
+function renderCard(data, template, handleOpenPopup) {
+    const cardEl = createCard(data, template, handleOpenPopup);
 
+    return cardsContainer.setItem(cardEl)
+}
+
+const cardsContainer = new Section({
+
+    renderer: (data) => {
+        renderCard(data, template, handleOpenPopup)
     }
 }, '.elements');
 
@@ -94,11 +98,12 @@ const popupCardsAdd = new PopupWithForm({
     formSubmitter: (data) => {
 
         popupCardsAdd.setLoader();
-        api.createCard(data)
+        api.createCard(data, template, handleOpenPopup)
 
             .then((data) => {
-                createCard(data, template, handleOpenPopup);
+                renderCard(data, template, handleOpenPopup)
                 popupCardsAdd.close();
+
             })
             .catch((err) => {
                 console.log(`Ошибка добавления карточки: ${err}`);
